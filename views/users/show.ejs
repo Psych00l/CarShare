@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <% if (!user.avatar === undefined) { %>
+            <img class="img-fluid" src="<%=user.avatar%>">
+            <% }else { %>
+            <img class="img-fluid" src="https://st3.depositphotos.com/1064969/15662/v/450/depositphotos_156625906-stock-illustration-user-avatar-icon.jpg">
+            <% } %>
+            <p><%=user.username%></p>
+            </p><div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div></p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quam autem esse aperiam ipsum molestiae modi laborum asperiores est eaque aut voluptate. Tempora tempore quaerat a velit maiores suscipit, eum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta qui quod rem deleniti quaerat numquam ullam totam ratione corporis labore voluptates vero aliquid velit minima laboriosam, accusamus, voluptate reiciendis asperiores.
+        </div>
+        <div class="col-md-9">
+            <% cars.forEach(function(car){ %>
+                <div class="card" id="userCardShow">
+                    <div class="container">
+                        <img class="img-thumbnail" id="userThumbShow" src="<%=car.image%>">
+                        <div class="caption"  id="userCarShow">
+                            <a href="/cars/<%=car.id%>"><%=car.name%></a>
+                            $<%=car.price%>/24h
+                            Short car description: <%=car.description%>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        
+    </div>
+</div>        
+
+<% include ../partials/footer %>

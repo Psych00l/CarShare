@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+
+
+
+<div class="container">
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1>We greet you at CarShare!
+            </h1>
+            <p>View cars that people are willing to share with you!</p>
+            <p>
+             <a class="btn btn-primary btn-lg" href="/cars/new">Add new car</a>
+             </p>
+        </div>
+    </header>
+    
+    
+    <div class="row text-center">
+        <% cars.forEach(function(car){ %>
+            <div class="col-md-3 col-sm-6">
+                <div>
+                    <img src="<%= car.image %>" class="img-thumbnail"> 
+                    <div class="caption">
+                        <h4><%= car.name %></h4>
+                        <a class="btn btn-primary" href="/cars/<%= car._id %>">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
